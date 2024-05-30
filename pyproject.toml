@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "opentele"
+version = "1.15.1"
+description = ""
+homepage = "https://github.com/thedemons/opentele"
+authors = ["thedemons <thedemons@gmail.com>", "arkptz <arkptz@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+poetry = "^1.8.3"
+telethon = "^1.35.0"
+tgcrypto = "^1.2.5"
+pyqt5 = "5.15.2"     # fix errs on x64 systems
+rich = "^13.7.1"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest-asyncio = "^0.23.7"
+pytest-mock = "^3.14.0"
+pytest-env = "^1.1.3"
+pytest = "^8.2.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

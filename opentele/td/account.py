@@ -212,8 +212,8 @@ class MapData(BaseObject):  # nocov
 
             else:
                 logging.warning(f"Unknown key type in encrypted map: {keyType}")
-
-            ExpectStreamStatus(map.stream, "Could not stream data from mapData ")
+            #bypass loading tdata from new versions. TODO: fix this method.
+            #ExpectStreamStatus(map.stream, "Could not stream data from mapData ")
 
         self.__localKey = localKey
 
@@ -1019,12 +1019,12 @@ class Account(BaseObject):
         dcId = DcId(ss.dc_id)
         userId = copy.UserId
         authKey = td.AuthKey(authKey, td.AuthKeyType.ReadFromFile, dcId)
-        
+
         if userId == None:
             await copy.connect()
             await copy.get_me()
             userId = copy.UserId
-            
+
         newAccount = None
 
         if owner != None:

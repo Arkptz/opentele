@@ -5,8 +5,8 @@ import atexit
 base_dir = pathlib.Path(__file__).parent.parent.absolute().__str__()
 sys.path.insert(1, base_dir)
 
-debug_py = os.path.join(base_dir, "src", "debug.py")
-debug_bk_py = os.path.join(base_dir, "src", "debug_bk.py")
+debug_py = os.path.join(base_dir, "opentele", "debug.py")
+debug_bk_py = os.path.join(base_dir, "opentele", "debug_bk.py")
 
 
 def on_exit():
@@ -30,10 +30,10 @@ def on_init():
 on_init()
 
 
-from src.td import TDesktop
-from src.td.account import Account
-from src.tl.telethon import TelegramClient
-from src.api import API, APIData, CreateNewSession, UseCurrentSession
+from opentele.td import TDesktop
+from opentele.td.account import Account
+from opentele.tl.telethon import TelegramClient
+from opentele.api import API, APIData, CreateNewSession, UseCurrentSession
 from telethon.errors.rpcerrorlist import FreshResetAuthorisationForbiddenError
 
 import pytest
